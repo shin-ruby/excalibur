@@ -1,0 +1,32 @@
+<% provide(:title, "Welcome") %>
+
+<div class="container">
+
+  <div class="starter-template">
+    <h1>Excalibur</h1>
+    <p class="lead">Ruby on Rails CMS</p>
+
+    <!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
+		  Test jQuery
+		</button>
+
+		<p><%= link_to "Go to dashboard", "#" %></p>
+  </div>
+
+</div><!-- /.container -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Excalibur</h4>
+      </div>
+      <div class="modal-body">
+        Ruby on Rails CMS
+      </div>
+    </div>
+  </div>
+</div>
