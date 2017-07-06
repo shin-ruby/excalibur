@@ -1,0 +1,10 @@
+<%= form_with(model: [:admin, @info ], local: true) do |f| %>
+  <%= render 'admin/shared/error_messages', object: @info %>
+  <h5><%= f.label :title, "标题" %></h5>
+  <%= f.text_field :title, class: 'form-control editor-title' %>
+
+  <h5><%= f.label :content, "内容" %></h5>
+  <%= f.text_area :content, class: 'form-control', rows: "22", id: "editor" %>
+
+  <%= f.submit '提交内容', class: "btn btn-primary form-submit", :data => { :"disable-with" => "请稍等..." } %>
+<% end %>

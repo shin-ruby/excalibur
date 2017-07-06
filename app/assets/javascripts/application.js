@@ -13,5 +13,10 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require jquery_ujs
+//= require simditor
 //= require turbolinks
 //= require_tree .
+
+document.addEventListener("turbolinks:load", function() {
+	
+});

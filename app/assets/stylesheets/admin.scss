@@ -108,3 +108,55 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+/*
+ * Form
+ */
+
+.editor-title {
+  border: 1px solid #EBEBEB;
+  border-radius: 0px;
+}
+
+.simditor {
+  border: 1px solid #EBEBEB;
+}
+
+.simditor .simditor-toolbar .toolbar-menu ul > li .menu-item {
+  font-size: 14px;
+}
+
+ .form-submit {
+  margin-top: 16px;
+  margin-bottom: 16px;
+ }
+
+ #error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  .form-control {
+    color: #F2DEDE;
+  }
+}
+
+/*
+ * Info list
+ */
+
+ .infos-table {
+  margin-top: 16px;
+ }
+
+//  .alert-alert {
+//   @extend .alert-danger;
+// }
+
+// .alert-notice {
+//   @extend .alert-warning;
+// }

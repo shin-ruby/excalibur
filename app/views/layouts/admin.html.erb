@@ -39,12 +39,12 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <%= content_tag(:li, :class => 'active') do %>
-              <%= link_to fa_icon("tachometer", text: "控制台"), "#" %>
+            <%= content_tag(:li, :class => "#{is_active_controller('admin/dashboards')}") do %>
+              <%= link_to fa_icon("tachometer", text: "控制台"), admin_root_path %>
             <% end %>
 
-            <%= content_tag(:li) do %>
-              <%= link_to fa_icon("newspaper-o", text: "新闻"), "#" %>
+            <%= content_tag(:li, :class => "#{is_active_controller('admin/infos')}") do %>
+              <%= link_to fa_icon("newspaper-o", text: "新闻管理"), admin_infos_path %>
             <% end %>
 
             <li><a href="#">Export</a></li>

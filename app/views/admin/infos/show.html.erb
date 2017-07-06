@@ -1,0 +1,10 @@
+<%= render 'admin/shared/flash_messages' %>
+
+<div class="row">
+  <div class="col-md-12">
+		<h3 class="page-header"><%= @info.title %></h3>
+		<p><%= simple_format(@info.content) %></p>
+  </div>
+</div>
+
+<p><%= link_to '修改', edit_admin_info_path(@info), class: "btn-primary btn-sm" %> | <%= link_to '返回', admin_infos_path %></p>
