@@ -21,6 +21,7 @@ gem 'font-awesome-rails'
 gem 'mini_magick', '~> 4.6', '>= 4.6.1'
 gem 'simditor', '~> 2.3', '>= 2.3.6'
 
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -28,6 +29,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'faker'
 end
 
 group :development do

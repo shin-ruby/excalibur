@@ -4,7 +4,7 @@ module Admin
     before_action :set_info, only: [:show, :edit, :update, :destroy]
 
     def index
-      @infos = Info.all
+      @infos = Info.paginate(page: params[:page])
     end
 
     def show
