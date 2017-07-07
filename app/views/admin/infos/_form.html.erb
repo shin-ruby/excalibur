@@ -1,4 +1,4 @@
-<%= form_with(model: [:admin, @info ], local: true) do |f| %>
+<%= form_with(model: [:admin, @info ], html: { multipart: true }, local: true) do |f| %>
   <%= render 'admin/shared/error_messages', object: @info %>
   <h5><%= f.label :title, "标题" %></h5>
   <%= f.text_field :title, class: 'form-control editor-title' %>
