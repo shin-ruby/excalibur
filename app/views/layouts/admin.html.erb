@@ -47,7 +47,9 @@
               <%= link_to fa_icon("newspaper-o", text: "新闻管理"), admin_infos_path %>
             <% end %>
 
-            <li><a href="#">Export</a></li>
+            <%= content_tag(:li, :class => "#{is_active_controller('admin/users')}") do %>
+              <%= link_to fa_icon("user", text: "管理者"), admin_users_path %>
+            <% end %>
           </ul>
           <ul class="nav nav-sidebar">
             <li><a href="">Nav item</a></li>

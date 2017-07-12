@@ -10,18 +10,19 @@ class InfoTest < ActiveSupport::TestCase
 		assert @info.valid?
 	end
 
-	test "title should be present" do
-		@info.title = " "
-		assert_not @info.valid?
-	end
+	# test "title should be present" do
+	# 	@info.title = " "
+	# 	assert_not @info.valid?
+	# end
 
-	test "content should be present" do
-		@info.content = " "
-		assert_not @info.valid?
-	end
+	# test "content should be present" do
+	# 	@info.content = " "
+	# 	assert_not @info.valid?
+	# end
 
-	test "order should be three first" do
-		assert_equal infos(:three), Info.first
-	end
+	# test "order should be three first" do
+	# 	assert_equal infos(:three), Info.first
+	# end
 
 end
+

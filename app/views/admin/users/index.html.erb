@@ -1,0 +1,93 @@
+<%= render 'admin/shared/flash_messages' %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= link_to '创建管理员', new_admin_user_path, remote: true , class: "btn btn-primary btn-sm", id: "newUserLink" %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-hover infos-table">
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>邮箱</th>
+          <th colspan="2">功能</th>
+        </tr>
+      </thead>
+
+      <tbody id="usersTable">
+        <%= render @users %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="newUserFormModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <%= form_with(model: [:admin, @user], local: false, :html => { id: "newUserForm" }) do |f| %>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">创建管理员</h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-dismissible alert-danger" id="alert-content2">
+            <div id="msg"></div>
+          </div>
+          <%= render partial: "f", locals: {f: f} %>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit '提交', class: "btn btn-primary form-submit", :data => { :"disable-with" => "请稍等..." } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="modal fade" id="editUserFormModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <%= form_with(model: [:admin, @user], method: :patch, local: false, id: "editUserForm", data: { type: :json } ) do |f| %>
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">编辑管理员</h4>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-dismissible alert-danger" id="alert-content">
+            <div id="msg"></div>
+          </div>
+          <h5><%= f.label :name, "姓名" %></h5>
+          <%= f.text_field :name, id: "editUserName", class: 'form-control' %>
+
+          <h5><%= f.label :email, "邮箱" %></h5>
+          <%= f.text_field :email, id: "editUserEmail", class: 'form-control' %>
+
+          <h5><%= f.label :password, "密码" %></h5>
+          <%= f.password_field :password, id: "editUserPassword", class: 'form-control' %>
+
+          <h5><%= f.label :password_confirmation, "重复密码" %></h5>
+          <%= f.password_field :password_confirmation, id: "editUserPasswordConfirmation", class: 'form-control' %>
+        </div>
+        <div class="modal-footer">
+          <%= f.submit '提交', class: "btn btn-primary form-submit", :data => { :"disable-with" => "请稍等..." } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<%= content_for :page_javascript do %>
+  <%= javascript_include_tag "users" %>
+  <script>
+    $('#newUserFormModal').modal({
+      show: false,
+    })
+    $('#editUserFormModal').modal({
+      show: false,
+    })
+  </script>
+<% end %>

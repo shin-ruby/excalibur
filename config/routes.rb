@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do
   	
     root to: 'dashboards#home'
-
+    resources :users
     resources :infos do
       collection do
         post :upload
@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     end
 
   end
+
+  # get '*path', controller: 'application', action: 'render_404'
 
 end
