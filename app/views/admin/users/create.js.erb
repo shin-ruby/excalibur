@@ -1,3 +1,14 @@
 $('#usersTable').prepend('<%= j render(@user) %>');
 $('#newUserFormModal').modal('hide');
+
+$(".editUserLink").on("ajax:success", function(e, data, status, xhr) {
+  $('#editUserFormModal').modal('show');
+  $('#alert-content').hide();
+  $('#editUserName').val(data['name']);
+  $('#editUserEmail').val(data['email']);
+  $('#editUserPassword').val(data['password']);
+  $('#editUserPasswordConfirmation').val(data['password_confirmation']);
+  return $("#editUserForm").attr('action', '/admin/users/' + data['id']);
+});
+
 $('#newUserForm')[0].reset();

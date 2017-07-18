@@ -27,6 +27,6 @@ $(document).on "turbolinks:load", ->
   $("#newUserForm")
   	.on "ajax:error", (e, xhr, status, error) ->
       $('#alert-content2').show()
-      # data = xhr.responseText
+      data = xhr.responseText
 			# jsonResponse = JSON.parse(data)
-      $('#alert-content2 #msg').html( xhr.responseText )
+      $('#alert-content2 #msg').html( data )

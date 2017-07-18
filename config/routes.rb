@@ -12,6 +12,9 @@ Rails.application.routes.draw do
       end
     end
 
+    get '/login', to: 'sessions#new'
+    post '/login', to: 'sessions#create'
+
   end
 
   # get '*path', controller: 'application', action: 'render_404'

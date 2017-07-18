@@ -1,6 +1,7 @@
 module Admin
   class UsersController < Admin::ApplicationController
-
+    before_action :logged_in_user
+    
     before_action :set_user, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -23,7 +24,7 @@ module Admin
     end
 
     def create
-      sleep 3
+      sleep 2
       @user = User.new(user_params)
 
       respond_to do |format|
@@ -34,13 +35,13 @@ module Admin
         else
           format.html { render :new }
           format.json { render json: @user.errors, status: :unprocessable_entity, notice: 'User was successfully created.' }
-          format.js { render json: @user.errors, status: :unprocessable_entity, notice: '22User was successfully created.' }
+          format.js { render json: @user.errors.full_messages.join(', '), status: :unprocessable_entity }
         end
       end
     end
 
     def update
-      sleep 3
+      sleep 2
       respond_to do |format|
 
         if @user.update(user_params)
