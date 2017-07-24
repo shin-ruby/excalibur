@@ -12,6 +12,14 @@ Rails.application.routes.draw do
       end
     end
 
+    # get '/uploads', to: 'uploads#index'
+    resources :uploads do
+      collection do
+        get 'create', as: :create
+        post 'qiniu'
+      end
+    end
+    
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
 

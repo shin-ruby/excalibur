@@ -1,0 +1,13 @@
+<h1>Upload Picture</h1>
+
+<%= form_tag "http://upload.qiniu.com", multipart: true do %>
+  <%= hidden_field_tag :token, @uptoken %>
+
+  <div class="field">
+    <%= label_tag :image %><br>
+    <%= file_field_tag :file %>
+  </div>
+  <div class="actions">
+    <%= submit_tag 'Upload' %>
+  </div>
+<% end %>

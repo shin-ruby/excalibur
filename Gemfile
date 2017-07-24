@@ -20,6 +20,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'mini_magick', '~> 4.6', '>= 4.6.1'
 gem 'simditor', '~> 2.3', '>= 2.3.6'
+gem 'qiniu', '~> 6.8.1'
 
 
 # Use Capistrano for deployment

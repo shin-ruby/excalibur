@@ -41,4 +41,21 @@ module ApplicationHelper
     end
   end
 
+  def qiniu_image_url(upload, format = :square)
+		# url = "http://op61r3aq7.bkt.clouddn.com/#{upload.picurl}"
+		url = "http://shin.ftghub.com/#{upload.qiniu_hash}"
+		case format
+		when :square
+		   url << '?imageView2/1/w/100/h/100/q/90'
+		when :preview
+		   url << '?imageView2/2/w/1000/h/1000/q/90'
+		else
+		   url
+		 end
+	end
+
+	def qiniu_image_print_url
+		url = "http://shin.ftghub.com/#{@upload.qiniu_hash}"
+	end
+
 end
