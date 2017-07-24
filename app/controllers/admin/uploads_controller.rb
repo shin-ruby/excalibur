@@ -32,7 +32,8 @@ module Admin
 	  end
 
 	  def qiniu
-	  	# byebug
+	  	sourceLink = "#{Rails.application.config.qiniu_domain}/#{params[:key]}"
+	  	Rails.logger.debug "sourceLink: #{sourceLink}"
 	  end
 
     def destroy
