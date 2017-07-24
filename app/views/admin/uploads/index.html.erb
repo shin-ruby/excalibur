@@ -70,7 +70,7 @@
         // 参考http://developer.qiniu.com/docs/v6/api/overview/up/response/simple-response.html
         var domain = up.getOption("domain");
         var res = $.parseJSON(info);
-        info['sourceLink'] = '//' + domain + '/' + res.key; //获取上传成功后的文件的Url
+        res["sourceLink"] = domain + '/' + res.key; //获取上传成功后的文件的Url
         console.log(info);
         // console.log(sourceLink);
         // Ajax 保存到数据看
@@ -79,9 +79,9 @@
           url: '/admin/uploads/qiniu',
           type: 'POST',
           cache: false,
-          data: info,
+          data: JSON.stringify(res),
           processData: false,
-          contentType: false
+          contentType: 'application/json'
         }).done(function(res) {
         }).fail(function(res) {});
 
